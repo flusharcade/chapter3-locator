@@ -26,13 +26,13 @@ namespace Locator.WinPhone.Modules
     public class WinPhoneModule : IModule
     {
 		/// <summary>
-		/// Register the specified builer.
+		/// Register the specified builder.
 		/// </summary>
-		/// <param name="builer">Builer.</param>
-        public void Register(ContainerBuilder builer)
+		/// <param name="builder">builder.</param>
+        public void Register(ContainerBuilder builder)
         {
-            builer.RegisterType<GeolocatorWinPhone>().As<IGeolocator>().SingleInstance();
-            builer.RegisterType<WinPhoneMethods>().As<IMethods>().SingleInstance();
+            builder.RegisterType<GeolocatorWinPhone>().As<IGeolocator>().SingleInstance();
+            builder.RegisterType<WinPhoneMethods>().As<IMethods>().SingleInstance();
         }
     }
 }

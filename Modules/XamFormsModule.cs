@@ -26,19 +26,19 @@ namespace Locator.Modules
 		#region Public Methods
 
 		/// <summary>
-		/// Register the specified builer.
+		/// Register the specified builder.
 		/// </summary>
-		/// <param name="builer">Builer.</param>
-		public void Register(ContainerBuilder builer)
+		/// <param name="builder">builder.</param>
+		public void Register(ContainerBuilder builder)
 		{
-			builer.RegisterType<MainPage> ().SingleInstance();
-			builer.RegisterType<MapPage> ().SingleInstance();
+			builder.RegisterType<MainPage> ().SingleInstance();
+			builder.RegisterType<MapPage> ().SingleInstance();
 
-			builer.RegisterType<Command> ().As<ICommand>().InstancePerDependency();
+			builder.RegisterType<Command> ().As<ICommand>().InstancePerDependency();
 
-			builer.Register (x => new NavigationPage(x.Resolve<MainPage>())).AsSelf().SingleInstance();
+			builder.Register (x => new NavigationPage(x.Resolve<MainPage>())).AsSelf().SingleInstance();
 
-			builer.RegisterType<NavigationService> ().As<INavigationService>().SingleInstance();
+			builder.RegisterType<NavigationService> ().As<INavigationService>().SingleInstance();
 		}
 
 		#endregion

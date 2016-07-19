@@ -25,17 +25,17 @@ namespace Locator.Portable.Modules
 		#region Public Methods
 
 		/// <summary>
-		/// Register the specified builer.
+		/// Register the specified builder.
 		/// </summary>
-		/// <param name="builer">Builer.</param>
-		public void Register(ContainerBuilder builer)
+		/// <param name="builder">builder.</param>
+		public void Register(ContainerBuilder builder)
 		{
-			builer.RegisterType<MainPageViewModel> ().SingleInstance();
-			builer.RegisterType<MapPageViewModel> ().SingleInstance();
+			builder.RegisterType<MainPageViewModel> ().SingleInstance();
+			builder.RegisterType<MapPageViewModel> ().SingleInstance();
 
-			builer.RegisterType<Position> ().As<IPosition>().SingleInstance();
+			builder.RegisterType<Position> ().As<IPosition>().SingleInstance();
 
-			builer.RegisterType<GeocodingWebServiceController> ().As<IGeocodingWebServiceController>().SingleInstance();
+			builder.RegisterType<GeocodingWebServiceController> ().As<IGeocodingWebServiceController>().SingleInstance();
 		}
 
 		#endregion
